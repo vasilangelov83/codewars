@@ -1,12 +1,13 @@
 def check_DNA(seq1, seq2):
+    shroter = seq1
+    longer = seq2
+    if len(seq1) > len(seq2):
+        shroter = seq2
+        longer = seq1
+    ref_dict = {"A": "T", "C": "G","G": "C","T":"A"}
 
-    #A - T
-    # C - G
-    ref_dict = {"A":"T","C":"G"}
-    return
+    if ''.join([ref_dict[x] for x in reversed(shroter)]) in longer:
 
-check_DNA('GTCTTAGTGTAGCTATGCATGC','GCATGCATAGCTACACTACGAC')
-check_DNA('ATGCTACG','CGTAGCAT')
-check_DNA('AGTCTGTATGCATCGTACCC','GGGTACGATGCATACAGACT')
-check_DNA('ATGCCTACGGCCATATATATTTAG','CTAAATATGTATGGCCGTAGGCAT')
-check_DNA('TAATACCCGACTAATTCCCC','GGGGAATTTCGGGTATTA')
+        return True
+    else: return False
+check_DNA('GCGCTGCTAGCTGATCGA','ACGTACGATCGATCAGCTAGCAGCGCTAC')
