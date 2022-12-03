@@ -1,4 +1,4 @@
-import sys
+
 def reverse_fizzbuzz(string):
 
     list_of_num = [int(x) if x.isdigit() else x for x in string.split(" ")]
